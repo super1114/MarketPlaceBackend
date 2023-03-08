@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const cors = require('cors')
@@ -52,4 +53,4 @@ app.listen(PORT, () => {
   console.log(`Server is running at ${PORT}`);
 })
 
-export default app;
+module.exports = app;
