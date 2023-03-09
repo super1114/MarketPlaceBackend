@@ -12,8 +12,8 @@ app.use(express.static('public'));
 //middleware
 var corsOptions = {
   credentials: true,
-  origin: "http://localhost:3000",
-  // origin: "https://market-place-backend-vert.vercel.app/",
+  // origin: "http://localhost:3000",
+  origin: "https://market-place-backend-vert.vercel.app/",
 };
 
 app.use(cors(corsOptions));
