@@ -23,31 +23,35 @@ app.get("/", (req, res) => {
   res.send("Hello James");
 });
 
-app.post("/create", upload.single('image'), async (req, res) => {
-  let imageName = req.file.filename;
-  const imagePath = `localhost:3000/${imageName}`;
-  mongoose.connect(MONGODB_URI);
-  const db = mongoose.connection;
-  db.on("error", (error) => {
-    res.send(error);
-  });
-  db.once("open", async () => {
+// app.post("/create", upload.single('image'), async (req, res) => {
+//   let imageName = req.file.filename;
+//   const imagePath = `localhost:3000/${imageName}`;
+//   mongoose.connect(MONGODB_URI);
+//   const db = mongoose.connection;
+//   db.on("error", (error) => {
+//     res.send(error);
+//   });
+//   db.once("open", async () => {
 
-    let newNFT = {
-      nftImgPath: imagePath,
-      nftName: req.body.nftName,
-      nftDescription: req.body.nftDescription,
-      nftProperties: req.body.nftDescription
-    };
+//     let newNFT = {
+//       nftImgPath: imagePath,
+//       nftName: req.body.nftName,
+//       nftDescription: req.body.nftDescription,
+//       nftProperties: req.body.nftDescription
+//     };
 
-    let nft = new NFTModel(newNFT);
-    try {
-      await nft.save();
-      res.send("NFT info saved");
-    } catch (error) {
-      res.status(500).send(error);
-    }
-  })
+//     let nft = new NFTModel(newNFT);
+//     try {
+//       await nft.save();
+//       res.send("NFT info saved");
+//     } catch (error) {
+//       res.status(500).send(error);
+//     }
+//   })
+// })
+
+app.get("/create", (req, res) => {
+  res.send("create");
 })
 
 app.listen(PORT, () => {
