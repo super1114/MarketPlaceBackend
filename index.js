@@ -1,22 +1,22 @@
 const express = require('express');
-const multer = require('multer');
-const mongoose = require('mongoose');
-const bodyparser = require('body-parser');
-const cors = require('cors');
-const NFTModel = require('./model/model');
+// const multer = require('multer');
+// const mongoose = require('mongoose');
+// const bodyparser = require('body-parser');
+// const cors = require('cors');
+// const NFTModel = require('./model/model');
 
 const PORT = 8000;
-const MONGODB_URI = "mongodb+srv://vercel-admin-user-64078ccf3f79391698b130d1:ApH30bpK6LZW1QJZ@xrpl-cluster.j3xqx9d.mongodb.net/nftDB?retryWrites=true&w=majority"
+// const MONGODB_URI = "mongodb+srv://vercel-admin-user-64078ccf3f79391698b130d1:ApH30bpK6LZW1QJZ@xrpl-cluster.j3xqx9d.mongodb.net/nftDB?retryWrites=true&w=majority"
 const app = express();
-const upload = multer({ dest: 'public/' });
+// const upload = multer({ dest: 'public/' });
 
 //use static files
 app.use(express.static('public'));
 //middleware
-app.use(bodyparser.urlencoded({ extended: true }));
-app.use(bodyparser.json());
-app.use(cors());
-app.use(express.json());
+// app.use(bodyparser.urlencoded({ extended: true }));
+// app.use(bodyparser.json());
+// app.use(cors());
+// app.use(express.json());
 
 //Router
 app.get("/", (req, res) => {
