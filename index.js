@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const cors = require('cors');
 const NFTModel = require('./model/model');
+const createRouter = require("./routers/createRouter");
 
 const PORT = 8000;
 const MONGODB_URI = "mongodb+srv://vercel-admin-user-64078ccf3f79391698b130d1:ApH30bpK6LZW1QJZ@xrpl-cluster.j3xqx9d.mongodb.net/nftDB?retryWrites=true&w=majority"
@@ -50,9 +51,7 @@ app.get("/", (req, res) => {
 //   })
 // })
 
-app.get("/create", (req, res) => {
-  res.send("create");
-})
+app.use('/create', createRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running at ${PORT}`);
