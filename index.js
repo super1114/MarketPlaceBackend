@@ -24,6 +24,9 @@ app.get("/", (req, res) => {
   res.send("Hello James");
 });
 
+app.listen(PORT, () => {
+  console.log("server ok")
+})
 // app.post("/create", upload.single('image'), async (req, res) => {
 //   let imageName = req.file.filename;
 //   const imagePath = `localhost:3000/${imageName}`;
