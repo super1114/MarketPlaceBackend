@@ -51,9 +51,9 @@ app.get("/", (req, res) => {
 //   })
 // })
 
-// app.get('/create', (req, res) => {
-//   res.send("create")
-// });
+app.get('/create', (req, res) => {
+  res.send("create")
+});
 
 app.listen(PORT, () => {
   console.log("server ok")
