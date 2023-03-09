@@ -1,6 +1,6 @@
 const express = require('express');
-// const bodyparser = require('body-parser');
-// const cors = require('cors');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const createRouter = require('./routers/createRouter');
 
@@ -10,9 +10,15 @@ const app = express();
 //use static files
 app.use(express.static('public'));
 //middleware
-// app.use(bodyparser.urlencoded({ extended: true }));
-// app.use(bodyparser.json());
-// app.use(cors());
+var corsOptions = {
+  credentials: true,
+  origin: "http://localhost:3000",
+  // origin: "https://market-place-backend-vert.vercel.app/",
+};
+
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //Router
 app.get("/", (req, res) => {
