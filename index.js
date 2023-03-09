@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("Hello James");
 });
 
-app.use("/create", createRouter);
+// app.use("/create", createRouter);
 
 app.listen(PORT, () => {
   console.log("server ok")
